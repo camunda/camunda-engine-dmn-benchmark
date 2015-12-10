@@ -4,7 +4,7 @@ Benchmark for the [camunda DMN engine](https://github.com/camunda/camunda-engine
 
 The benchmark measure how many decision tables can evaluate per second.
 
-## How to run it 
+## How to run it
 
 Go to the project directory and install it with Maven:
 
@@ -15,10 +15,10 @@ $ mvn clean install
 After the build is done, you will get the self-contained executable JAR, which holds the benchmark, and all essential JMH infrastructure code. Now, run the benchmark:
 
 ```
-$ java -jar benchmarks.jar -rf csv -rff camunda-dmn-engine-benchmark-results.csv
+$ java -jar target/benchmarks.jar -rf csv -rff camunda-dmn-engine-benchmark-results.csv
 ```
 
-This will take a few minutes (~ 5-10min). Then the benchmark is done, you can see the results on the command line and on the generated CSV file _camunda-dmn-engine-benchmark-results.csv_. 
+This will take a few minutes (~ 5-10min). Then the benchmark is done, you can see the results on the command line and on the generated CSV file _camunda-dmn-engine-benchmark-results.csv_.
 
 ## How to customize it
 
