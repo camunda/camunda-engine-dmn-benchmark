@@ -1,91 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" expressionLanguage="http://www.omg.org/spec/FEEL/20140401" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn" typeLanguage="http://www.omg.org/spec/FEEL/20140401">
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
   <decision id="tenRules" name="Benchmark">
-    <decisionTable hitPolicy="UNIQUE" id="decisionTable" preferredOrientation="Rule-as-Row">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
       <input id="input1" label="number of matched rules">
         <inputExpression id="inputExpression1" typeRef="double">        <text>input</text>
 </inputExpression>
       </input>
-      <output id="output1" label="rule matched?" name="" typeRef="string"/>
+      <output id="output1" label="rule matched?" name="" typeRef="string" />
       <rule id="rule_2a26142e-02d2-401f-b5c7-bafe47978b2d">
-        <inputEntry id="inputEntry_e2e12834-f79d-48ce-b044-6ce42317425c">
-          <text>&lt; 0.0</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_b417ed41-beae-439c-b8d8-749780713809">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_e2e12834-f79d-48ce-b044-6ce42317425c">        <text><![CDATA[< 0.0]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_b417ed41-beae-439c-b8d8-749780713809">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_d657302d-00ca-455f-aa00-d5977e0ce769">
-        <inputEntry id="inputEntry_daf0b5ca-0a45-484f-9ec7-a7179673cc1d">
-          <text>&lt; 0.1</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_528f80db-7695-4270-b8b4-bb36d520eaa4">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_daf0b5ca-0a45-484f-9ec7-a7179673cc1d">        <text><![CDATA[< 0.1]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_528f80db-7695-4270-b8b4-bb36d520eaa4">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_cae46ceb-ec72-4f8a-a110-2da920728b85">
-        <inputEntry id="inputEntry_5d10bc17-c413-4601-9357-067c11ad3e00">
-          <text>&lt; 0.2</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_49a8ef3d-fce3-4982-9e95-054c2e67ebd1">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_5d10bc17-c413-4601-9357-067c11ad3e00">        <text><![CDATA[< 0.2]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_49a8ef3d-fce3-4982-9e95-054c2e67ebd1">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_32b345c9-8b4f-41c6-a166-a4e05e504d83">
-        <inputEntry id="inputEntry_6bedbb63-9fc6-41a6-b862-bd1baf1847c8">
-          <text>&lt; 0.3</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_0e978715-cef6-48bb-a678-9f11e82fb0b2">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_6bedbb63-9fc6-41a6-b862-bd1baf1847c8">        <text><![CDATA[< 0.3]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_0e978715-cef6-48bb-a678-9f11e82fb0b2">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_b4bc4d58-ce6a-4db1-8bca-0b89ac27c199">
-        <inputEntry id="inputEntry_0e509302-f176-41ab-af9b-ca9bd3ca0163">
-          <text>&lt; 0.4</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_e42c2408-24f0-43aa-b17e-c50599ac62b0">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_0e509302-f176-41ab-af9b-ca9bd3ca0163">        <text><![CDATA[< 0.4]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_e42c2408-24f0-43aa-b17e-c50599ac62b0">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_7bbee1b5-4afb-4e61-ac47-a978ce76847d">
-        <inputEntry id="inputEntry_f7de6bd3-7ed6-408f-a095-adbad7201455">
-          <text>&lt; 0.5</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_b2dd4d7f-fb36-462d-940a-deee35899c44">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_f7de6bd3-7ed6-408f-a095-adbad7201455">        <text><![CDATA[< 0.5]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_b2dd4d7f-fb36-462d-940a-deee35899c44">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_819fac99-97c3-4245-8e64-a50bc1cb6c5d">
-        <inputEntry id="inputEntry_cd6605a0-3248-40cb-bc40-258395979155">
-          <text>&lt; 0.6</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_eca3c13d-f04f-4a6e-aafd-80f458da648b">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_cd6605a0-3248-40cb-bc40-258395979155">        <text><![CDATA[< 0.6]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_eca3c13d-f04f-4a6e-aafd-80f458da648b">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_6b9e113d-fb7d-46a9-8bd5-256708476f1b">
-        <inputEntry id="inputEntry_cad70ae2-d30e-48fe-b4f2-f56fad10ea5d">
-          <text>&lt; 0.7</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_823b36f0-97c9-41d8-9865-643b0dc129fe">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_cad70ae2-d30e-48fe-b4f2-f56fad10ea5d">        <text><![CDATA[< 0.7]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_823b36f0-97c9-41d8-9865-643b0dc129fe">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_48a90854-083d-476a-86f9-88e78ba4b47c">
-        <inputEntry id="inputEntry_2c18776f-5961-4b1f-b115-27aedfaca785">
-          <text>&lt; 0.8</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_cb5981fc-4c03-41ed-b3ed-be854e2967b8">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_2c18776f-5961-4b1f-b115-27aedfaca785">        <text><![CDATA[< 0.8]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_cb5981fc-4c03-41ed-b3ed-be854e2967b8">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_d54cd55d-5e28-4f28-89d3-8706c3c8d3aa">
-        <inputEntry id="inputEntry_48369998-337c-4e27-ae98-3e81355e072e">
-          <text>&lt; 0.9</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_d0b4b38e-dc43-4d26-a064-83ef55c0c1bd">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_48369998-337c-4e27-ae98-3e81355e072e">        <text><![CDATA[< 0.9]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_d0b4b38e-dc43-4d26-a064-83ef55c0c1bd">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
     </decisionTable>
   </decision>

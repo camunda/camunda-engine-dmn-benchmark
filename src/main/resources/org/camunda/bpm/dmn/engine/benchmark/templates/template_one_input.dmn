@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
   <decision id="template" name="Benchmark">
-    <decisionTable id="decisionTable">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
       <input id="input1" label="number of matched rules">
         <inputExpression id="inputExpression1" typeRef="double">        <text>input</text>
 </inputExpression>

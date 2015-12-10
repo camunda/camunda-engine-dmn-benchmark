@@ -1,51 +1,41 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" expressionLanguage="http://www.omg.org/spec/FEEL/20140401" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn" typeLanguage="http://www.omg.org/spec/FEEL/20140401">
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn11.xsd" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
   <decision id="fiveRules" name="Benchmark">
-    <decisionTable hitPolicy="UNIQUE" id="decisionTable" preferredOrientation="Rule-as-Row">
+    <decisionTable id="decisionTable" hitPolicy="COLLECT">
       <input id="input1" label="number of matched rules">
         <inputExpression id="inputExpression1" typeRef="double">        <text>input</text>
 </inputExpression>
       </input>
-      <output id="output1" label="rule matched?" name="" typeRef="string"/>
+      <output id="output1" label="rule matched?" name="" typeRef="string" />
       <rule id="rule_d511fec7-adde-4849-9253-d98baf9c1501">
-        <inputEntry id="inputEntry_abfe84bf-2222-4dd5-bc36-9d9ea5c38d07">
-          <text>&lt; 0.0</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_6274dbc1-cb0e-4b6c-827e-1c027eb4abd0">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_abfe84bf-2222-4dd5-bc36-9d9ea5c38d07">        <text><![CDATA[< 0.0]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_6274dbc1-cb0e-4b6c-827e-1c027eb4abd0">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_379bc88f-d582-49d5-a766-6385eb9571f2">
-        <inputEntry id="inputEntry_94d2aafe-0835-4a19-bbcb-99ef2b3581e9">
-          <text>&lt; 0.2</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_72a7cd13-cec3-4381-9727-83b3efb8119d">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_94d2aafe-0835-4a19-bbcb-99ef2b3581e9">        <text><![CDATA[< 0.2]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_72a7cd13-cec3-4381-9727-83b3efb8119d">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_242ca554-8a44-4550-8ba9-637f9a0b53c8">
-        <inputEntry id="inputEntry_35f02977-a553-4b27-b231-3afb58072a86">
-          <text>&lt; 0.4</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_84409afd-c336-46cc-8e58-6e4f997d412d">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_35f02977-a553-4b27-b231-3afb58072a86">        <text><![CDATA[< 0.4]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_84409afd-c336-46cc-8e58-6e4f997d412d">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_ea18dd07-aa34-4c28-be90-3b73aff8f08e">
-        <inputEntry id="inputEntry_f2f27bc5-3486-431b-93cb-ccdb7b7e1f1c">
-          <text>&lt; 0.6</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_a7c772a5-43a1-451f-ac3b-6b9d28e18fc1">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_f2f27bc5-3486-431b-93cb-ccdb7b7e1f1c">        <text><![CDATA[< 0.6]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_a7c772a5-43a1-451f-ac3b-6b9d28e18fc1">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
       <rule id="rule_df9db561-2748-49a1-aa6e-0a1f0fb65a65">
-        <inputEntry id="inputEntry_ec41db1d-1b7e-4da9-a0a9-f733bf4ac792">
-          <text>&lt; 0.8</text>
-        </inputEntry>
-        <outputEntry id="outputEntry_b7e473cb-d16c-4da6-9ad8-993d91e1faf1">
-          <text>"matched"</text>
-        </outputEntry>
+        <inputEntry id="inputEntry_ec41db1d-1b7e-4da9-a0a9-f733bf4ac792">        <text><![CDATA[< 0.8]]></text>
+</inputEntry>
+        <outputEntry id="outputEntry_b7e473cb-d16c-4da6-9ad8-993d91e1faf1">        <text><![CDATA["matched"]]></text>
+</outputEntry>
       </rule>
     </decisionTable>
   </decision>
