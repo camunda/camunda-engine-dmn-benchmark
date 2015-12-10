@@ -37,14 +37,18 @@ public class DecisionTableGenerator {
   public static void main(String[] args) {
 
     String template = TEMPLATE_DIR + "template_one_input.dmn";
-    String decisionId = "oneHundredRules";
-    long rules = 100;
+    String output = OUTPUT_DIR + "5Rules.dmn";
+
+    String decisionId = "fiveRules";
+
+    long numberOfRules = 5;
+    long numberOfInputs = 1;
 
     DecisionTableGenerator generator = new DecisionTableGenerator();
-    generator.generateDmn(template, decisionId, rules);
+    generator.generateDmn(template, output, decisionId, numberOfRules, numberOfInputs);
   }
 
-  public void generateDmn(String template, String decisionId, long rules) {
+  public void generateDmn(String template, String output, String decisionId, long numberOfRules, long numberOfInputs) {
     InputStream inputStream = getClass().getResourceAsStream(template);
     DmnModelInstance dmnModelInstance = Dmn.readModelFromStream(inputStream);
 
@@ -55,28 +59,31 @@ public class DecisionTableGenerator {
     // add the rules
     DecisionTable decisionTable = dmnModelInstance.getModelElementById("decisionTable");
 
-    for (int i = 0; i < rules; i++) {
-      double x = (double) i / rules;
+    for (int i = 0; i < numberOfRules; i++) {
+      double x = (double) i / numberOfRules;
 
-      Rule rule = createRule(dmnModelInstance, x);
+      Rule rule = createRule(dmnModelInstance, numberOfInputs, x);
       decisionTable.getRules().add(rule);
     }
 
     // write the dmn file
-    File dmnFile = new File(OUTPUT_DIR, rules + "Rules.dmn");
+    File dmnFile = new File(output);
     Dmn.writeModelToFile(dmnFile, dmnModelInstance);
 
     System.out.println("generate dmn file: " + dmnFile.getAbsolutePath());
   }
 
-  private Rule createRule(DmnModelInstance dmnModelInstance, double x) {
-
-    InputEntry inputEntry = createInputEntry(dmnModelInstance, "< " + x);
+  private Rule createRule(DmnModelInstance dmnModelInstance, double numberOfInputs, double x) {
 
     OutputEntry outputEntry = createOutputEntry(dmnModelInstance, "\"matched\"");
 
     Rule rule = dmnModelInstance.newInstance(Rule.class);
-    rule.getInputEntries().add(inputEntry);
+
+    for (int i = 0; i < numberOfInputs; i++) {
+      InputEntry inputEntry = createInputEntry(dmnModelInstance, "> " + x);
+      rule.getInputEntries().add(inputEntry);
+    }
+
     rule.getOutputEntries().add(outputEntry);
 
     return rule;

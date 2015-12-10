@@ -63,21 +63,25 @@ import org.openjdk.jmh.annotations.Warmup;
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.SECONDS)
 @State(Scope.Benchmark)
-@Fork(3)
+@Fork(1)
 @Threads(1)
 public class DmnEngineBenchmark {
 
   private static final String DMN_DIRECTORY = "/org/camunda/bpm/dmn/engine/benchmark/";
 
   // decision ids
-  private static final String DONT_CARE = "dontCare";
   private static final String ONE_RULE = "oneRule";
   private static final String FIVE_RULES = "fiveRules";
   private static final String TEN_RULES = "tenRules";
   private static final String ONE_HUNDRED_RULES = "oneHundredRules";
 
+  private static final String ONE_RULE_TWO_INPUTS = "oneRuleTwoInputs";
+  private static final String FIVE_RULES_TWO_INPUTS = "fiveRulesTwoInputs";
+  private static final String TEN_RULES_TWO_INPUTS = "tenRulesTwoInputs";
+  private static final String ONE_HUNDRED_RULES_TWO_INPUTS = "oneHundredRulesTwoInputs";
+
   // decision tables to evaluate
-  @Param({ DONT_CARE, ONE_RULE, FIVE_RULES, TEN_RULES, ONE_HUNDRED_RULES })
+  @Param({ ONE_RULE, FIVE_RULES, TEN_RULES, ONE_HUNDRED_RULES, ONE_RULE_TWO_INPUTS, FIVE_RULES_TWO_INPUTS, TEN_RULES_TWO_INPUTS, ONE_HUNDRED_RULES_TWO_INPUTS })
   public String decisionDefinitionKey;
 
   // 1.0 => 100% - all rules of the decision table will match
@@ -98,11 +102,15 @@ public class DmnEngineBenchmark {
     dmnEngine = configuration.buildEngine();
 
     // parse all decisions before evaluate it
-    parseDecision(dmnEngine, "dontCare.dmn", DONT_CARE);
     parseDecision(dmnEngine, "oneRule.dmn", ONE_RULE);
     parseDecision(dmnEngine, "5Rules.dmn", FIVE_RULES);
     parseDecision(dmnEngine, "10Rules.dmn", TEN_RULES);
     parseDecision(dmnEngine, "100Rules.dmn", ONE_HUNDRED_RULES);
+
+    parseDecision(dmnEngine, "oneRule_2Inputs.dmn", ONE_RULE_TWO_INPUTS);
+    parseDecision(dmnEngine, "5Rules_2Inputs.dmn", FIVE_RULES_TWO_INPUTS);
+    parseDecision(dmnEngine, "10Rules_2Inputs.dmn", TEN_RULES_TWO_INPUTS);
+    parseDecision(dmnEngine, "100Rules_2Inputs.dmn", ONE_HUNDRED_RULES_TWO_INPUTS);
   }
 
   @Benchmark
